@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 
 const projectSchema = new mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        unique: true,
+        required: true
     },
     description: {
         type: String
@@ -48,7 +50,8 @@ const projectSchema = new mongoose.Schema({
 
     status: {
         type: String,
-        enum: ["planned", "ongoing", "completed", "delayed"]
+        enum: ["planned", "ongoing", "completed", "delayed"],
+        default: "ongoing"
     }
 
 }, { timestamps: true})
