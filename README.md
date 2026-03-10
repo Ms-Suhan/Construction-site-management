@@ -270,15 +270,17 @@ git push origin feature-name
 # 📜 License
 
 This project is licensed under the **MIT License**.
-
+₹`
 ---
 
 # 👨‍💻 Author
 
 **Suhan**
-
 GitHub: https://github.com/Ms-Suhan
 
 **Sanjog**
+GitHub : https://github.com/gauravvyas2002
 
+
+**Gaurav**
 GitHub: https://github.com/Sanjog181002-commits
