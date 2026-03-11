@@ -4,7 +4,7 @@ const {
     updateSupplier,
     createSupplier,
     deleteSupplier
-} = require("../controllers/supplier.controller")
+} = require("../controllers/supplier.controllers")
 
 const {Router} = requrie('express')
 
