@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 8000
 const userRoute = require('./routes/user.route')
 const projectRoute = require('./routes/project.route')
 const materialRoute = require('./routes/material.route')
+const supplierRoute = require('./routes/supplier.route')
 
 
 dbConnect();
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 app.use('/api/v1/user', userRoute)
 app.use('/api/v1/project', projectRoute)
 app.use('/api/v1/material', materialRoute)
+app.use('/api/v1/supplier', supplierRoute)
 
 
 
