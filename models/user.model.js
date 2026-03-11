@@ -15,7 +15,8 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type :String,
-        required: true
+        required: true,
+        select: false
     },
     phone: {
         type: String
@@ -49,7 +50,8 @@ const userSchema = new mongoose.Schema({
     },
 
     salt :{
-        type: String
+        type: String,
+        select: false
     },
 
     profile_image_url: {

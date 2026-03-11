@@ -5,39 +5,31 @@ const Project = require('../models/project.model')
 
 const router = express.Router()
 
+const {
+    createProject,
+    updateProject,
+    getProject,
+    getProjects,
+    deleteProject,
+    updateProgress,
+    addWorker,
+    
+} = require('../controllers/project.controllers')
 
-router.post("/create", async (req, res) => {
-    const body = req.body
-    await Project.create({
-       name: body.name,
-       description: body?.description,
-       client_name: body?.client_name,
-       manager: body?.manager,
-       site_engineers: body?.site_engineers,
-       workers: body?.workers,
-       warehouse: body?.warehouse,
-       materials_required: body?.materials_required,
-       budget: body?.budget,
-       status: body?.status 
-    })
+router.post("/create", createProject)
 
-    res.send("Project Created")
-})
+router.get('/:id', getProject )
 
-router.post("/edit-project", async (req, res) => {
-    const body = req.body
+router.get('/projects/:id', getProjects)
 
-    await Project.updateOne(
-        { name: body.name },
-        { 
-            $set: {manager: body?.manager},
-            $set: {warehouse: body?.warehouse},
-            $push: {site_engineers : body?.site_engineers},
-            $push: {workers : body?.workers},
-        }
-)
+router.post('/update-progress', updateProgress)
 
-    res.send("project updated")
-})
+router.delete('/delete-project/:id', deleteProject)
+
+router.post('/update-project/:id', updateProject)
+
+router.post('/add-worker/:id', addWorker)
+
+
 
 module.exports = router

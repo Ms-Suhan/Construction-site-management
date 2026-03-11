@@ -52,6 +52,10 @@ const projectSchema = new mongoose.Schema({
         type: String,
         enum: ["planned", "ongoing", "completed", "delayed"],
         default: "ongoing"
+    },
+    percentage_complete: {
+        type: Number,
+        defalut : 0
     }
 
 }, { timestamps: true})
