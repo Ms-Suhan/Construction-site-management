@@ -1,7 +1,6 @@
 require('dotenv').config()
 const express = require('express')
 
-const Project = require('../models/project.model')
 
 const router = express.Router()
 
@@ -16,11 +15,14 @@ const {
     
 } = require('../controllers/project.controllers')
 
-router.post("/create", createProject)
+
+
+
+router.get('/projects/:id', getProjects)
 
 router.get('/:id', getProject )
 
-router.get('/projects/:id', getProjects)
+router.post("/create", createProject)
 
 router.post('/update-progress', updateProgress)
 

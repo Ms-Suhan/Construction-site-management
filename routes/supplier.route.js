@@ -6,7 +6,7 @@ const {
     deleteSupplier
 } = require("../controllers/supplier.controllers")
 
-const {Router} = requrie('express')
+const {Router} = require('express')
 
 
 const router = Router()
@@ -21,4 +21,4 @@ router.put('/:id', updateSupplier)
 
 router.delete('/:id', deleteSupplier)
 
-module.export = router
+module.exports = router

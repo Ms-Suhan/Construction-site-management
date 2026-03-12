@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 
 const PORT = process.env.PORT || 8000
 
+const authRoute = require("./routes/auth.route")
 const userRoute = require('./routes/user.route')
 const projectRoute = require('./routes/project.route')
 const materialRoute = require('./routes/material.route')
@@ -17,9 +18,10 @@ const inventoryRoute = require('./routes/inventory.route')
 const dashboardRoute = require('./routes/dashboard.route')
 
 
-dbConnect();
 
 const app = express()
+
+dbConnect();
 
 app.use(cookieParser())
 app.use(express.json())
@@ -31,6 +33,8 @@ app.use(express.urlencoded({ extended: true }))
 app.get("/", (req, res) => {
     res.send("Welcome to Construction Site Management")
 })
+
+app.use('/api/v1/auth', authRoute)
 app.use('/api/v1/user', userRoute)
 app.use('/api/v1/project', projectRoute)
 app.use('/api/v1/material', materialRoute)
